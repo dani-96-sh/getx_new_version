@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:new_getx_version/app/data/Global/global_function.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,37 +21,52 @@ class _MyAppState extends State<MyApp> {
       home: Scaffold(
         backgroundColor: Colors.deepPurple,
         body: Center(
-          child: ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                ),
+                onPressed: () {
+                  GlobalFunction().getSnackbar();
+                },
+                child: Text(
+                  'Snack Bar',
+                  style: TextStyle(fontFamily: 'GB', fontSize: 18),
+                ),
               ),
-            ),
-            onPressed: () {
-              Get.snackbar(
-                '',
-                '',
-                titleText: Text(
-                  'درست شد',
-                  textAlign: TextAlign.end,
-                  style: TextStyle(fontFamily: 'Dana', fontSize: 18),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
                 ),
-                messageText: Text(
-                  'کار میکند',
-                  textAlign: TextAlign.end,
-
-                  style: TextStyle(fontFamily: 'Dana', fontSize: 18),
+                onPressed: () {
+                  GlobalFunction().getDialog();
+                },
+                child: Text(
+                  'GetDialog',
+                  style: TextStyle(fontFamily: 'GB', fontSize: 18),
                 ),
-                icon: Icon(Icons.alarm, size: 45),
-                shouldIconPulse: true,
-                reverseAnimationCurve: Curves.bounceIn,
-                borderRadius: 8,
-                dismissDirection: DismissDirection.horizontal,
-                backgroundColor: Colors.amber,
-                snackPosition: SnackPosition.TOP,
-              );
-            },
-            child: Text('data'),
+              ),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                ),
+                onPressed: () {
+                  GlobalFunction().getbottomsheet();
+                },
+                child: Text(
+                  'Get Bottomsheet',
+                  style: TextStyle(fontFamily: 'GB', fontSize: 18),
+                ),
+              ),
+            ],
           ),
         ),
       ),
