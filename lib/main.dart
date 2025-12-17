@@ -30,6 +30,7 @@ class _MyAppState extends State<MyApp> {
         child: Scaffold(
           backgroundColor: Colors.deepPurple,
           body: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
